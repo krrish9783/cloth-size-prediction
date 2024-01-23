@@ -59,4 +59,9 @@ df <- data.frame(height=data$height,weight=data$weight,age=data$age,size=data$si
  
 head(df)
 print(table(df$size))
+paste(nrow(df),ncol(df))
+colnames(df)
+summary(df)
+print(table(df$size))
 
+barplot(table(df$size), main="Number of Occurrences for Each Size", xlab="Size", ylab="Count", col=c("skyblue", "salmon", "palegreen", "orchid", "lightcoral", "cornflowerblue", "lightgoldenrodyellow"))
