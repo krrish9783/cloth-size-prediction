@@ -65,3 +65,22 @@ summary(df)
 print(table(df$size))
 
 barplot(table(df$size), main="Number of Occurrences for Each Size", xlab="Size", ylab="Count", col=c("skyblue", "salmon", "palegreen", "orchid", "lightcoral", "cornflowerblue", "lightgoldenrodyellow"))
+
+library(ggplot2)
+
+
+# Age distr
+ggplot(df, aes(x=age)) +
+  geom_histogram(binwidth=1, fill="skyblue", color="black", alpha=0.7) +
+  labs(title="Age Distribution", x="Age", y="Frequency")
+
+
+#Weight distr 
+output_file <- "weight_distribution_plot.png"
+png(output_file, width = 800, height = 600)
+
+ggplot(df, aes(x=weight)) +
+  geom_histogram(binwidth=1, fill="skyblue", color="black", alpha=0.7) +
+  labs(title="Age Distribution", x="Age", y="Frequency")
+
+dev.off()
